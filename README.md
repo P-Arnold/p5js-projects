@@ -1,4 +1,6 @@
-# p5js-projects
+# p5.s Projects
 
+
+## Delauney Triangles
 ![til](./demo/dTris.gif)
 
