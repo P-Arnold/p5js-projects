@@ -2,23 +2,19 @@ var Delauney;
 
 (function() {
   "use strict";
-
   var EPSILON = 1.0 / 1048576.0;
-
   function supertriangle(vertices) {
     var xmin = Number.POSITIVE_INFINITY,
         ymin = Number.POSITIVE_INFINITY,
         xmax = Number.NEGATIVE_INFINITY,
         ymax = Number.NEGATIVE_INFINITY,
         i, dx, dy, dmax, xmid, ymid;
-
     for(i = vertices.length; i--; ) {
       if(vertices[i][0] < xmin) xmin = vertices[i][0];
       if(vertices[i][0] > xmax) xmax = vertices[i][0];
       if(vertices[i][1] < ymin) ymin = vertices[i][1];
       if(vertices[i][1] > ymax) ymax = vertices[i][1];
     }
-
     dx = xmax - xmin;
     dy = ymax - ymin;
     dmax = Math.max(dx, dy);
@@ -31,7 +27,6 @@ var Delauney;
       [xmid + 20 * dmax, ymid -      dmax]
     ];
   }
-
   function circumcircle(vertices, i, j, k) {
     var x1 = vertices[i][0],
         y1 = vertices[i][1],
